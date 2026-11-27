@@ -3,7 +3,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes">
 <title>After World</title>
-<link rel="manifest" href="manifest.webmanifest"><link rel="apple-touch-icon" href="icon-192.png"><meta name="theme-color" content="#12151c">
+<link rel="manifest" href="manifest.webmanifest"><link rel="apple-touch-icon" href="icon-192.png"><meta name="theme-color" content="#090b10">
 <style>
 :root{--bg:#f4f5f7;--panel:#fff;--ink:#1d2230;--mute:#5c6475;--line:#d5d9e2;--acc:#2f5d8a;color-scheme:light}
 @media (prefers-color-scheme:dark){:root{--bg:#12151c;--panel:#1a1f2a;--ink:#e4e7ee;--mute:#9aa3b5;--line:#2c3342;--acc:#8fb8e6;color-scheme:dark}}
@@ -23,6 +23,24 @@ button{font:inherit;color:var(--ink);background:var(--panel);border:1px solid va
 .big{padding:22px;font-size:1.2rem;font-weight:700;border-radius:12px}.big small{display:block;font-weight:400;color:var(--mute);font-size:.85rem}
 .chk{display:flex;gap:10px;align-items:center;padding:8px 2px}.chk input{width:22px;height:22px}
 button:focus-visible{outline:3px solid var(--acc);outline-offset:2px}
+
+/* AFTER WORLD — Obsidian Leather visual identity */
+:root{--bg:#090b10;--panel:#141820;--ink:#e5e8ed;--mute:#9ba5b3;--line:#343d4b;--acc:#668db8;--hit:#a88b4e;--bad:#d47c78;color-scheme:dark}
+html,body{background-color:#090b10!important;color:var(--ink)}
+body{background-image:radial-gradient(ellipse at 50% -15%,rgba(39,57,79,.34),transparent 58%),repeating-linear-gradient(2deg,rgba(255,255,255,.012) 0px,rgba(255,255,255,.012) 1px,transparent 1px,transparent 4px),repeating-linear-gradient(92deg,rgba(0,0,0,.12) 0px,rgba(0,0,0,.12) 1px,transparent 1px,transparent 5px),linear-gradient(135deg,#11151c,#080a0e 60%,#10141b)!important;background-attachment:fixed!important;font-family:system-ui,-apple-system,"Segoe UI",sans-serif!important}
+header,.seg,#nav,#res{background:linear-gradient(180deg,#1b222d 0%,#11161e 100%)!important;border-color:#394453!important;box-shadow:0 2px 12px rgba(0,0,0,.35),inset 0 1px rgba(255,255,255,.045)}
+header h1,h1,h2,h3,h4{font-family:system-ui,-apple-system,"Segoe UI",sans-serif!important;letter-spacing:.025em}
+header h1{font-weight:700}h1,h2,h3,h4{color:#9bb8d6!important}
+main{background:transparent}
+section,.card,.big div,.sg div,.res,details{background:linear-gradient(145deg,rgba(30,36,46,.96),rgba(17,21,28,.98))!important;border:1px solid #384351!important;box-shadow:inset 0 1px rgba(255,255,255,.035),0 3px 10px rgba(0,0,0,.18)}
+button,.btn{background:linear-gradient(180deg,#252d39,#171d26)!important;color:#e5e8ed!important;border:1px solid #465364!important;border-radius:5px!important;box-shadow:inset 0 1px rgba(255,255,255,.07)}
+button.pri,.pri{background:linear-gradient(180deg,#315477,#203a55)!important;border-color:#6385a8!important;color:#fff!important}
+button.on,.seg .on,#nav button.on{color:#d6bd82!important;border-color:#8f7848!important;box-shadow:inset 0 -2px #a88b4e!important}
+input,textarea,select{background:#0d1117!important;color:#e5e8ed!important;border:1px solid #3c4857!important;border-radius:5px!important}
+a{color:#9bb8d6}th{background:#202936!important;color:#d9c28f}td,th{border-color:#3b4654!important}
+mark{background:#8e7541!important;color:#fff!important}#app{background:#090b10!important}
+#ban{background:#171e28!important;border-color:#455264!important;color:#e5e8ed!important}
+.ov{background:linear-gradient(145deg,#171d26,#090b10)!important;color:#e5e8ed}
 </style></head><body>
 <div id="app"><iframe id="f-rule" src="rulebook.html" title="Rulebook"></iframe><iframe id="f-chars" src="sheet.html" title="Characters" hidden></iframe><iframe id="f-gm" src="gm.html" title="GM tools" hidden></iframe>
 <div id="ban" hidden><span id="bt"></span><button id="bb"></button><button id="bx">Dismiss</button></div><nav id="nav"></nav></div>
