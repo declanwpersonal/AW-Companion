@@ -29,6 +29,175 @@ th,td{border:1px solid var(--line);padding:6px 8px;vertical-align:top;text-align
 #res a{display:block;padding:10px 0;border-bottom:1px solid var(--line);text-decoration:none;color:var(--ink);font-size:16px}
 mark{background:var(--hit);color:inherit;border-radius:3px}.flash{outline:3px solid var(--acc);outline-offset:3px;border-radius:4px}
 .meta{color:var(--mute);font-size:14px}
+
+
+/* AFTER WORLD — Dark Leather · Dark Aero · Art Deco */
+:root:not([data-theme="light"]){
+  --bg:#0B0C0F;--panel:#15171C;--panel2:#22252B;--ink:#E2E0D9;--mute:#92969D;
+  --line:#3a3f48;--acc:#142C49;--acc2:#20466C;--gold:#B49A62;--silver:#AEB5BE;
+  --hit:#B49A62;--bad:#d47c78;color-scheme:dark
+}
+:root:not([data-theme="light"]),:root:not([data-theme="light"]) body{
+  background-color:#0B0C0F!important;
+  background-image:
+    linear-gradient(rgba(11,12,15,.72),rgba(11,12,15,.78)),
+    url("assets/leather-tile.jpg")!important;
+  background-size:auto,480px!important;
+  background-repeat:no-repeat,repeat!important;
+  background-attachment:fixed!important;
+  color:var(--ink)!important;
+  font-family:system-ui,-apple-system,"Segoe UI",sans-serif!important
+}
+:root:not([data-theme="light"]) header,
+:root:not([data-theme="light"]) .seg,
+:root:not([data-theme="light"]) #nav,
+:root:not([data-theme="light"]) #res,
+:root:not([data-theme="light"]) #ban{
+  background:
+    linear-gradient(180deg,rgba(21,23,28,.96),rgba(11,12,15,.98)),
+    url("assets/obsidian-tile.jpg")!important;
+  background-size:auto,320px!important;
+  background-blend-mode:normal,overlay!important;
+  border-color:#3a3f48!important;
+  box-shadow:0 2px 14px rgba(0,0,0,.4),inset 0 1px rgba(174,181,190,.08)!important
+}
+:root:not([data-theme="light"]) header h1,
+:root:not([data-theme="light"]) h1,
+:root:not([data-theme="light"]) h2,
+:root:not([data-theme="light"]) h3,
+:root:not([data-theme="light"]) h4{
+  font-family:system-ui,-apple-system,"Segoe UI",sans-serif!important;
+  letter-spacing:.03em;
+  color:#c5d4e8!important
+}
+:root:not([data-theme="light"]) header h1{font-weight:700;color:#E2E0D9!important}
+:root:not([data-theme="light"]) main{background:transparent}
+:root:not([data-theme="light"]) section,
+:root:not([data-theme="light"]) .card,
+:root:not([data-theme="light"]) .big div,
+:root:not([data-theme="light"]) .sg div,
+:root:not([data-theme="light"]) .res,
+:root:not([data-theme="light"]) details,
+:root:not([data-theme="light"]) .ov{
+  background:
+    linear-gradient(145deg,rgba(34,37,43,.94),rgba(21,23,28,.97)),
+    url("assets/charcoal-tile.jpg")!important;
+  background-size:auto,280px!important;
+  border:1px solid #3a3f48!important;
+  box-shadow:inset 0 1px rgba(174,181,190,.06),0 3px 12px rgba(0,0,0,.25)!important
+}
+:root:not([data-theme="light"]) button,
+:root:not([data-theme="light"]) .btn{
+  background:linear-gradient(180deg,#2a2e36,#1a1d23)!important;
+  color:#E2E0D9!important;
+  border:1px solid #4a505a!important;
+  border-radius:5px!important;
+  box-shadow:inset 0 1px rgba(174,181,190,.1),0 1px 2px rgba(0,0,0,.3)!important
+}
+:root:not([data-theme="light"]) button.pri,
+:root:not([data-theme="light"]) .pri{
+  background:linear-gradient(180deg,#20466C,#142C49)!important;
+  border-color:#3d6a9a!important;
+  color:#fff!important
+}
+:root:not([data-theme="light"]) button.on,
+:root:not([data-theme="light"]) .seg .on,
+:root:not([data-theme="light"]) #nav button.on{
+  color:#B49A62!important;
+  border-color:#8f7848!important;
+  box-shadow:inset 0 -2px #B49A62!important
+}
+:root:not([data-theme="light"]) input,
+:root:not([data-theme="light"]) textarea,
+:root:not([data-theme="light"]) select{
+  background:#0B0C0F!important;
+  color:#E2E0D9!important;
+  border:1px solid #3a3f48!important;
+  border-radius:5px!important
+}
+:root:not([data-theme="light"]) a{color:#8fb0d4}
+:root:not([data-theme="light"]) th{background:#1a1d24!important;color:#B49A62}
+:root:not([data-theme="light"]) td,
+:root:not([data-theme="light"]) th{border-color:#3a3f48!important}
+:root:not([data-theme="light"]) mark{background:#B49A62!important;color:#0B0C0F!important}
+:root:not([data-theme="light"]) #app{background:#0B0C0F!important}
+:root:not([data-theme="light"]) .aw-divider{
+  display:block;height:12px;margin:16px 0 12px;
+  background:url("assets/deco-divider-sm.jpg") center/contain no-repeat;
+  opacity:.85;border:0
+}
+
+/* Light theme when Theme button sets data-theme="light" */
+:root[data-theme="light"]{
+  --bg:#f4f5f7;--panel:#ffffff;--ink:#1d2230;--mute:#5c6475;--line:#d5d9e2;--acc:#2f5d8a;--hit:#ffe08a;--bad:#a8322d;color-scheme:light
+}
+:root[data-theme="light"],
+:root[data-theme="light"] body{
+  background-color:#f4f5f7!important;
+  background-image:none!important;
+  color:#1d2230!important;
+  font-family:"Crimson Pro",Georgia,serif!important
+}
+:root[data-theme="light"] header,
+:root[data-theme="light"] #nav,
+:root[data-theme="light"] #res{
+  background:#ffffff!important;
+  border-color:#d5d9e2!important;
+  box-shadow:none!important;
+  color:#1d2230!important
+}
+:root[data-theme="light"] h1,
+:root[data-theme="light"] h2,
+:root[data-theme="light"] h3,
+:root[data-theme="light"] h4,
+:root[data-theme="light"] header h1{
+  color:#2f5d8a!important;
+  font-family:Cinzel,Georgia,serif!important;
+  letter-spacing:normal
+}
+:root[data-theme="light"] button,
+:root[data-theme="light"] .btn,
+:root[data-theme="light"] header button,
+:root[data-theme="light"] header input{
+  background:#ffffff!important;
+  color:#1d2230!important;
+  border:1px solid #d5d9e2!important;
+  border-radius:8px!important;
+  box-shadow:none!important
+}
+:root[data-theme="light"] button.pri,
+:root[data-theme="light"] .pri{
+  background:#2f5d8a!important;
+  border-color:#2f5d8a!important;
+  color:#fff!important
+}
+:root[data-theme="light"] input,
+:root[data-theme="light"] textarea,
+:root[data-theme="light"] select{
+  background:#f4f5f7!important;
+  color:#1d2230!important;
+  border:1px solid #d5d9e2!important
+}
+:root[data-theme="light"] a{color:#2f5d8a}
+:root[data-theme="light"] th{background:#ffffff!important;color:#1d2230!important}
+:root[data-theme="light"] td,
+:root[data-theme="light"] th{border-color:#d5d9e2!important}
+:root[data-theme="light"] mark{background:#ffe08a!important;color:#1d2230!important}
+:root[data-theme="light"] #nav a{color:#1d2230;border-bottom-color:#d5d9e2}
+:root[data-theme="light"] main{background:transparent}
+:root[data-theme="light"] #nav .x,
+:root[data-theme="light"] #res .x{
+  background:#ffffff!important;
+  color:#1d2230!important;
+  border:1px solid #d5d9e2!important
+}
+
+:root:not([data-theme="light"]) h2::after{
+  content:"";display:block;height:10px;margin:8px 0 4px;
+  background:url("assets/deco-divider-sm.jpg") center/contain no-repeat;
+  opacity:.7
+}
+:root[data-theme="light"] .aw-divider{opacity:0;height:0;margin:8px 0}
 </style></head><body>
 <header><button id="menu" aria-label="Open contents">Contents</button><input id="q" type="search" placeholder="Search the rulebook" enterkeyhint="search" autocomplete="off"><button id="theme" aria-label="Toggle theme">Theme</button></header>
 <div id="nav"><button class="x" id="nx">Close</button><div id="navlist"></div></div>
@@ -27937,8 +28106,10 @@ book.querySelectorAll('h1[id],h2[id]').forEach(function(h){
 $('#menu').onclick=function(){$('#nav').classList.add('on')};
 $('#nx').onclick=function(){$('#nav').classList.remove('on')};
 $('#rx').onclick=function(){$('#res').classList.remove('on')};
-$('#theme').onclick=function(){var r=document.documentElement,d=r.dataset.theme==='dark'||(!r.dataset.theme&&matchMedia('(prefers-color-scheme:dark)').matches);r.dataset.theme=d?'light':'dark';store('aw-theme',r.dataset.theme)};
-var t=store('aw-theme');if(t)document.documentElement.dataset.theme=t;
+function isDarkTheme(){var r=document.documentElement;return r.dataset.theme==='dark'||(r.dataset.theme!=='light'&&matchMedia('(prefers-color-scheme:dark)').matches)}
+function applyThemeLabel(){var btn=$('#theme');if(!btn)return;var dark=isDarkTheme();btn.textContent=dark?'Light':'Dark';btn.setAttribute('aria-label',dark?'Switch to light theme':'Switch to dark theme')}
+$('#theme').onclick=function(){var r=document.documentElement,next=isDarkTheme()?'light':'dark';r.dataset.theme=next;store('aw-theme',next);applyThemeLabel()};
+var t=store('aw-theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t;applyThemeLabel();
 var blocks=Array.prototype.slice.call(book.querySelectorAll('p,li,h1,h2,h3,h4,td'));
 function esc(s){return s.replace(/[&<>]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;'}[c]})}
 function search(q){

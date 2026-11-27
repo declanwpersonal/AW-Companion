@@ -16,4 +16,87 @@ main{max-width:40rem;margin:0 auto;padding:12px 14px 60px}h2{font:700 1.05rem Ge
 .row{display:flex;gap:6px;flex-wrap:wrap;margin-top:6px}.row button{flex:1;min-width:4.5rem}.pri{background:var(--acc);color:var(--bg);border-color:var(--acc);font-weight:700}
 .turn{border-color:var(--acc);box-shadow:0 0 0 2px var(--acc)}.dead strong{text-decoration:line-through;color:var(--mute)}.res{padding:10px;border-radius:8px;background:var(--panel);border:1px solid var(--line);font-weight:600;margin:8px 0}
 .chip{min-height:36px;padding:2px 10px;font-size:14px;flex:0 0 auto!important;min-width:0!important}.f span{display:block;font-size:13px;color:var(--mute)}.f{display:block}.del{color:var(--bad)}
-</style></head><body><div id="wn" hidden role="alert" style="background:var(--bad);color:var(--bg);padding:8px 12px;font-weight:600">Not saved: this browser is blocking storage. Your tracker, NPCs, encounters and notes will be lost when you close the app.</div><div class="seg" id="seg"></div><main id="m"></main><script src="enemies.js"></script><script src="loot.js"></script><script src="loot-modern.js"></script><script src="gm2.js"></script><script src="gm.js"></script></body></html>
+
+
+/* AFTER WORLD — Dark Leather · Dark Aero · Art Deco */
+:root{
+  --bg:#0B0C0F;--panel:#15171C;--panel2:#22252B;--ink:#E2E0D9;--mute:#92969D;
+  --line:#3a3f48;--acc:#142C49;--acc2:#20466C;--gold:#B49A62;--silver:#AEB5BE;
+  --hit:#B49A62;--bad:#d47c78;color-scheme:dark
+}
+html,body{
+  background-color:#0B0C0F!important;
+  background-image:
+    linear-gradient(rgba(11,12,15,.72),rgba(11,12,15,.78)),
+    url("assets/leather-tile.jpg")!important;
+  background-size:auto,480px!important;
+  background-repeat:no-repeat,repeat!important;
+  background-attachment:fixed!important;
+  color:var(--ink)!important;
+  font-family:system-ui,-apple-system,"Segoe UI",sans-serif!important
+}
+header,.seg,#nav,#res,#ban{
+  background:
+    linear-gradient(180deg,rgba(21,23,28,.96),rgba(11,12,15,.98)),
+    url("assets/obsidian-tile.jpg")!important;
+  background-size:auto,320px!important;
+  background-blend-mode:normal,overlay!important;
+  border-color:#3a3f48!important;
+  box-shadow:0 2px 14px rgba(0,0,0,.4),inset 0 1px rgba(174,181,190,.08)!important
+}
+header h1,h1,h2,h3,h4{
+  font-family:system-ui,-apple-system,"Segoe UI",sans-serif!important;
+  letter-spacing:.03em;
+  color:#c5d4e8!important
+}
+header h1{font-weight:700;color:#E2E0D9!important}
+main{background:transparent}
+section,.card,.big div,.sg div,.res,details,.ov{
+  background:
+    linear-gradient(145deg,rgba(34,37,43,.94),rgba(21,23,28,.97)),
+    url("assets/charcoal-tile.jpg")!important;
+  background-size:auto,280px!important;
+  border:1px solid #3a3f48!important;
+  box-shadow:inset 0 1px rgba(174,181,190,.06),0 3px 12px rgba(0,0,0,.25)!important
+}
+button,.btn{
+  background:linear-gradient(180deg,#2a2e36,#1a1d23)!important;
+  color:#E2E0D9!important;
+  border:1px solid #4a505a!important;
+  border-radius:5px!important;
+  box-shadow:inset 0 1px rgba(174,181,190,.1),0 1px 2px rgba(0,0,0,.3)!important
+}
+button.pri,.pri{
+  background:linear-gradient(180deg,#20466C,#142C49)!important;
+  border-color:#3d6a9a!important;
+  color:#fff!important
+}
+button.on,.seg .on,#nav button.on{
+  color:#B49A62!important;
+  border-color:#8f7848!important;
+  box-shadow:inset 0 -2px #B49A62!important
+}
+input,textarea,select{
+  background:#0B0C0F!important;
+  color:#E2E0D9!important;
+  border:1px solid #3a3f48!important;
+  border-radius:5px!important
+}
+a{color:#8fb0d4}
+th{background:#1a1d24!important;color:#B49A62}
+td,th{border-color:#3a3f48!important}
+mark{background:#B49A62!important;color:#0B0C0F!important}
+#app{background:#0B0C0F!important}
+
+h2::after{
+  content:"";display:block;height:10px;margin:8px 0 4px;
+  background:url("assets/deco-divider-sm.jpg") center/contain no-repeat;
+  opacity:.7
+}
+
+.aw-divider{
+  display:block;height:12px;margin:16px 0 12px;
+  background:url("assets/deco-divider-sm.jpg") center/contain no-repeat;
+  opacity:.85;border:0
+}
+</style></head><body><div id="wn" hidden role="alert" style="background:var(--bad);color:var(--bg);padding:8px 12px;font-weight:600">Not saved: this browser is blocking storage. Your tracker, NPCs, encounters and notes will be lost when you close the app.</div><div class="seg" id="seg"></div><main id="m"></main><script src="enemies.js"></script><script src="loot.js"></script><script src="loot-modern.js"></script><script src="extra2.js"></script><script src="gm2.js"></script><script src="gm.js"></script></body></html>
