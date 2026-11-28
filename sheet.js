@@ -144,12 +144,20 @@ function nextStep(){
   return{label:'Review racial traits, then hide the checklist when ready',id:'sec-traits',focus:null};
 }
 function nextUp(){var s=nextStep();return s?s.label:null}
+function awHdr(){var h=document.querySelector('header'),v=h?Math.ceil(h.getBoundingClientRect().height):64;document.documentElement.style.setProperty('--aw-hdr',v+'px');return v}
 function goNextUp(){
-  var s=nextStep();if(!s)return;
-  var el=document.getElementById(s.id);if(el)el.scrollIntoView({behavior:'smooth',block:'start'});
-  if(s.focus){var f=document.querySelector(s.focus);if(f){try{f.focus()}catch(e){}if(f.classList){f.classList.add('aw-pulse');setTimeout(function(){f.classList.remove('aw-pulse')},1600)}}}
-  // flash section
-  if(el){el.style.boxShadow='0 0 0 2px #B49A62,0 2px 10px rgba(0,0,0,.3)';setTimeout(function(){el.style.boxShadow=''},1600)}
+  var s=nextStep();if(!s){alert('Nothing left on the creation list.');return}
+  awHdr();
+  var el=document.getElementById(s.id)||document.getElementById('chk')||document.getElementById('sheet');
+  if(el){
+    var y=el.getBoundingClientRect().top+(window.pageYOffset||document.documentElement.scrollTop)-awHdr()-12;
+    window.scrollTo({top:Math.max(0,y),behavior:'smooth'});
+    el.classList.add('aw-flash');setTimeout(function(){el.classList.remove('aw-flash')},1800);
+  }
+  if(s.focus){
+    var f=document.querySelector(s.focus);
+    if(f){setTimeout(function(){try{f.focus({preventScroll:true})}catch(e){}f.classList.add('aw-pulse');setTimeout(function(){f.classList.remove('aw-pulse')},1800)},450)}
+  }
 }
 function paintNextUp(){
   var el=document.getElementById('aw-nextup');
@@ -169,8 +177,8 @@ function paintNextUp(){
   var go=document.getElementById('aw-nextup-go');
   if(go&&!go._aw){go._aw=1;go.addEventListener('click',function(e){e.preventDefault();goNextUp()})}
   var n=nextUp();
-  if(!n){el.className='';el.style.display='none';return}
-  el.className='on';el.style.display='block';
+  if(!n){el.className='';el.style.display='';document.body.classList.remove('aw-nu');return}
+  el.className='on';el.style.display='';document.body.classList.add('aw-nu');awHdr();
   if(tx)tx.textContent=n;
 }
 function nextUpHtml(){paintNextUp();return ''}
@@ -195,7 +203,7 @@ html+='<h2>Notes</h2><p>'+esc(cur.notes||'')+'</p>';
 html+='<script>onload=function(){print()}<\/script></body></html>';
 w.document.write(html);w.document.close()}
 
-function listView(){var el=document.getElementById('aw-nextup');if(el)el.classList.remove('on');
+function listView(){var el=document.getElementById('aw-nextup');if(el)el.classList.remove('on');document.body.classList.remove('aw-nu');
   $('#sheet').hidden=true;$('#list').hidden=false;$('#back').hidden=true;$('#ttl').textContent='After World Characters';$('#st').textContent='';
   var ids=Object.keys(db).sort(function(a,b){return db[b].upd-db[a].upd}),h='';
   if(!ok)h+='<p class="warn">This browser is blocking storage, so characters will not be kept. Use Export to keep a copy.</p>';
@@ -220,7 +228,7 @@ function open(id,keep){
   h+='<label class="f"><span>Background</span>'+sel('bg',B,cur.bg,'Choose from the book')+'</label>'+fld('Background (edit or type your own)','bg');
   h+=bb?'<details><summary>Background details</summary><ul>'+bb.info.map(function(x){return '<li>'+esc(x)+'</li>'}).join('')+'</ul><button data-kit="1">Add kit to Equipment</button></details>':'';
   h+=periodHtml(th);h+=fld('Concept','concept')+'<div class="g2">'+fld('Level','level','number')+fld('Race bonus ranks','raceBonus','number')+'</div><div class="g2">'+fld('Height (feet)','hf','number')+fld('Height (inches)','hi','number')+'</div><button data-lv="1">Level up</button><p class="meta" id="lvm"></p></section>';
-  h+='<section><h2>Attributes</h2><p class="meta" id="rk"></p>';
+  h+='<section id="sec-ranks"><h2>Attributes</h2><p class="meta" id="rk"></p>';
   A.forEach(function(a){h+='<div class="row"><span class="an">'+a+'</span>'+step(a,a)+'<span class="die" id="d-'+a+'"></span><button class="roll" data-r="'+a+'">Roll</button></div>'});
   h+='<label class="f"><span>Roll mode</span><select id="adv"><option value="n">Normal</option><option value="a">Advantage (keep higher)</option><option value="d">Disadvantage (keep lower)</option></select></label><label class="f"><span>Target Armour Rating for attacks (max 8)</span><input id="tar" type="number" inputmode="numeric" value="0"></label><label class="f"><span>Roll bonus (tools, traits)</span><input id="bon" type="number" inputmode="numeric" value="0"></label><div class="g2"><label class="f"><span>Target number (DS or CD)</span><input id="tgt" type="number" inputmode="numeric"></label><label class="f"><span>Presets</span><select id="tpre"><option value="">Custom</option><option value="8">Easy 8</option><option value="10">Standard 10</option><option value="12">Hard 12</option><option value="14">Heroic 14</option><option value="7" data-n="Core crafting, Novice.">Craft, Core: Novice 7</option><option value="8" data-n="Core crafting, Adept.">Craft, Core: Adept 8</option><option value="10" data-n="Core crafting, Master.">Craft, Core: Master 10</option><option value="8" data-n="Alchemy, Chemistry or Medicine, Novice: damage or effect 8, range 1 zone, duration 3 turns.">Alchemy or Chemistry: Novice 8</option><option value="9" data-n="Alchemy, Chemistry or Medicine, Adept: damage or effect 10, range 2 zones, duration 4 turns.">Alchemy or Chemistry: Adept 9</option><option value="11" data-n="Alchemy, Chemistry or Medicine, Master: damage or effect 15, range 3 zones, duration 5 turns.">Alchemy or Chemistry: Master 11</option></select></label></div><p class="meta" id="tpn"></p><label class="f"><span>A tie counts as</span><select id="tie"><option value="s">Success (as the book suggests)</option><option value="f">Failure</option></select></label><div class="g2"><label class="f"><span>Target effect</span><select id="tfx"><option value="n">None</option><option value="s">Stunned (Advantage)</option><option value="g">Grounded (melee)</option><option value="p">Paralysed or Restrained</option></select></label><label class="f"><span>Target type</span><select id="tvr"><option value="n">Normal</option><option value="v">Vulnerable</option><option value="r">Resistant</option><option value="i">Immune</option></select></label></div><label class="chk"><input type="checkbox" id="tool"> Trained tool set (+3)</label><label class="chk"><input type="checkbox" id="untr"> Not trained (Disadvantage)</label><p class="meta" id="tbn"></p><div class="row"><select id="cta" style="flex:2">'+A.map(function(a){return '<option>'+a+'</option>'}).join('')+'</select><input id="ob" type="number" inputmode="numeric" placeholder="Opponent bonus" style="flex:2"><button data-ct="1">Contested roll</button></div><p id="rr" class="res" aria-live="polite">Tap Roll on an attribute.</p></section>';
   h+='<section><h2>Health</h2><div class="row"><span class="an">Hit Points</span>'+step('hp','Hit Points')+'<span class="die" id="hm"></span></div>'+'<div class="row"><input id="dmg" type="number" inputmode="numeric" placeholder="Amount" style="flex:1"><button data-dm="-1">Damage</button><button data-dm="1">Heal</button></div><div class="row"><button data-wi="1">Take a Wound instead</button><button data-dr="1">Death Rolls</button><button data-hd="1">Hit while down</button><button data-rv="1">Clear Dead</button></div><p class="meta" id="dr" aria-live="polite"></p><p class="meta" id="zr"></p>'+fld('Other HP bonus (Healthy is automatic)','hpBonus','number')+'<p class="meta" id="hb"></p>';
@@ -382,4 +390,5 @@ document.addEventListener('change',function(e){var t=e.target;if(t.id==='tpre'){
     var n=0,bad=0,ks=Object.keys(d).slice(0,200);ks.forEach(function(k){var c=cleanC(d[k]);if(c){db[c.id]=c;n++}else bad++});put();listView();alert('Imported '+n+' character'+(n===1?'':'s')+(bad?'. Skipped '+bad+' that were not valid.':'.'))}catch(x){alert('That file is not an After World characters export.')}};rd.readAsText(fl)});
 load();
 listView();
+window.addEventListener('resize',function(){try{awHdr()}catch(e){}});
 })();
