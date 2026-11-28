@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>GM tools</title>
+<html lang="en" data-theme="dark"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>GM tools</title>
 <style>
 :root{--bg:#f4f5f7;--panel:#fff;--ink:#1d2230;--mute:#5c6475;--line:#d5d9e2;--acc:#2f5d8a;--bad:#a8322d;color-scheme:light}
 @media (prefers-color-scheme:dark){:root{--bg:#12151c;--panel:#1a1f2a;--ink:#e4e7ee;--mute:#9aa3b5;--line:#2c3342;--acc:#8fb8e6;--bad:#f08a84;color-scheme:dark}}
@@ -16,4 +16,24 @@ main{max-width:40rem;margin:0 auto;padding:12px 14px 60px}h2{font:700 1.05rem Ge
 .row{display:flex;gap:6px;flex-wrap:wrap;margin-top:6px}.row button{flex:1;min-width:4.5rem}.pri{background:var(--acc);color:var(--bg);border-color:var(--acc);font-weight:700}
 .turn{border-color:var(--acc);box-shadow:0 0 0 2px var(--acc)}.dead strong{text-decoration:line-through;color:var(--mute)}.res{padding:10px;border-radius:8px;background:var(--panel);border:1px solid var(--line);font-weight:600;margin:8px 0}
 .chip{min-height:36px;padding:2px 10px;font-size:14px;flex:0 0 auto!important;min-width:0!important}.f span{display:block;font-size:13px;color:var(--mute)}.f{display:block}.del{color:var(--bad)}
-</style></head><body><div id="wn" hidden role="alert" style="background:var(--bad);color:var(--bg);padding:8px 12px;font-weight:600">Not saved: this browser is blocking storage. Your tracker, NPCs, encounters and notes will be lost when you close the app.</div><div class="seg" id="seg"></div><main id="m"></main><script src="enemies.js"></script><script src="loot.js"></script><script src="loot-modern.js"></script><script src="gm2.js"></script><script src="gm.js"></script></body></html>
+
+
+
+
+
+
+
+
+/* After World V9.1 visuals live in aw-visuals.css */
+#sess{display:none;padding:6px 10px;font-size:13px;gap:8px;flex-wrap:wrap;align-items:center;border-top:1px solid rgba(180,154,98,.4)}
+#sess.on{display:flex}
+#sess b{color:#B49A62}
+#sess .sgo{margin-left:auto}
+
+</style>
+<link rel="stylesheet" href="aw-visuals.css?v=91"></head><body>
+<div id="wn" hidden role="alert" style="background:var(--bad);color:var(--bg);padding:8px 12px;font-weight:600">Not saved: this browser is blocking storage. Your tracker, NPCs, encounters and notes will be lost when you close the app.</div><div class="seg" id="seg"></div><main id="m"></main><script src="enemies.js"></script><script src="loot.js"></script><script src="loot-modern.js"></script><script src="extra2.js"></script><script src="gm2.js"></script><script src="gm.js"></script><script>
+(function(){try{var t=localStorage.getItem('aw-theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t;else document.documentElement.dataset.theme='dark';
+window.addEventListener('storage',function(e){if(e.key==='aw-theme'&&(e.newValue==='light'||e.newValue==='dark'))document.documentElement.dataset.theme=e.newValue});
+}catch(x){}})();
+</script></body></html>
