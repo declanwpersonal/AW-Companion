@@ -3,7 +3,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes">
 <title>After World</title>
-<link rel="manifest" href="manifest.webmanifest"><link rel="apple-touch-icon" href="icon-192.png"><meta name="theme-color" content="#12151c">
+<link rel="manifest" href="manifest.webmanifest"><link rel="apple-touch-icon" href="icon-192.png"><meta name="theme-color" content="#090b10">
 <style>
 :root{--bg:#f4f5f7;--panel:#fff;--ink:#1d2230;--mute:#5c6475;--line:#d5d9e2;--acc:#2f5d8a;color-scheme:light}
 @media (prefers-color-scheme:dark){:root{--bg:#12151c;--panel:#1a1f2a;--ink:#e4e7ee;--mute:#9aa3b5;--line:#2c3342;--acc:#8fb8e6;color-scheme:dark}}
@@ -23,13 +23,205 @@ button{font:inherit;color:var(--ink);background:var(--panel);border:1px solid va
 .big{padding:22px;font-size:1.2rem;font-weight:700;border-radius:12px}.big small{display:block;font-weight:400;color:var(--mute);font-size:.85rem}
 .chk{display:flex;gap:10px;align-items:center;padding:8px 2px}.chk input{width:22px;height:22px}
 button:focus-visible{outline:3px solid var(--acc);outline-offset:2px}
+
+
+
+/* AFTER WORLD — Dark Leather · Dark Aero · Art Deco (default / dark) */
+:root:not([data-theme="light"]){
+  --bg:#0B0C0F;--panel:#15171C;--panel2:#22252B;--ink:#E2E0D9;--mute:#92969D;
+  --line:#3a3f48;--acc:#142C49;--acc2:#20466C;--gold:#B49A62;--silver:#AEB5BE;
+  --hit:#B49A62;--bad:#d47c78;color-scheme:dark
+}
+:root:not([data-theme="light"]),
+:root:not([data-theme="light"]) body{
+  background-color:#0B0C0F!important;
+  background-image:
+    linear-gradient(rgba(11,12,15,.72),rgba(11,12,15,.78)),
+    url("leather-tile.jpg")!important;
+  background-size:auto,480px!important;
+  background-repeat:no-repeat,repeat!important;
+  background-attachment:fixed!important;
+  color:var(--ink)!important;
+  font-family:system-ui,-apple-system,"Segoe UI",sans-serif!important
+}
+:root:not([data-theme="light"]) header,
+:root:not([data-theme="light"]) .seg,
+:root:not([data-theme="light"]) #nav,
+:root:not([data-theme="light"]) #res,
+:root:not([data-theme="light"]) #ban{
+  background:
+    linear-gradient(180deg,rgba(21,23,28,.96),rgba(11,12,15,.98)),
+    url("obsidian-tile.jpg")!important;
+  background-size:auto,320px!important;
+  border-color:#3a3f48!important;
+  box-shadow:0 2px 14px rgba(0,0,0,.4),inset 0 1px rgba(174,181,190,.08)!important
+}
+:root:not([data-theme="light"]) header h1,
+:root:not([data-theme="light"]) h1,
+:root:not([data-theme="light"]) h2,
+:root:not([data-theme="light"]) h3,
+:root:not([data-theme="light"]) h4{
+  font-family:system-ui,-apple-system,"Segoe UI",sans-serif!important;
+  letter-spacing:.03em;
+  color:#c5d4e8!important
+}
+:root:not([data-theme="light"]) header h1{font-weight:700;color:#E2E0D9!important}
+:root:not([data-theme="light"]) main{background:transparent}
+:root:not([data-theme="light"]) section,
+:root:not([data-theme="light"]) .card,
+:root:not([data-theme="light"]) .big div,
+:root:not([data-theme="light"]) .sg div,
+:root:not([data-theme="light"]) .res,
+:root:not([data-theme="light"]) details,
+:root:not([data-theme="light"]) .ov{
+  background:
+    linear-gradient(145deg,rgba(34,37,43,.94),rgba(21,23,28,.97)),
+    url("charcoal-tile.jpg")!important;
+  background-size:auto,280px!important;
+  border:1px solid #3a3f48!important;
+  box-shadow:inset 0 1px rgba(174,181,190,.06),0 3px 12px rgba(0,0,0,.25)!important
+}
+:root:not([data-theme="light"]) button,
+:root:not([data-theme="light"]) .btn{
+  background:linear-gradient(180deg,#2a2e36,#1a1d23)!important;
+  color:#E2E0D9!important;
+  border:1px solid #4a505a!important;
+  border-radius:5px!important;
+  box-shadow:inset 0 1px rgba(174,181,190,.1),0 1px 2px rgba(0,0,0,.3)!important
+}
+:root:not([data-theme="light"]) button.pri,
+:root:not([data-theme="light"]) .pri{
+  background:linear-gradient(180deg,#20466C,#142C49)!important;
+  border-color:#3d6a9a!important;
+  color:#fff!important
+}
+:root:not([data-theme="light"]) button.on,
+:root:not([data-theme="light"]) .seg .on,
+:root:not([data-theme="light"]) #nav button.on{
+  color:#B49A62!important;
+  border-color:#8f7848!important;
+  box-shadow:inset 0 -2px #B49A62!important
+}
+:root:not([data-theme="light"]) input,
+:root:not([data-theme="light"]) textarea,
+:root:not([data-theme="light"]) select{
+  background:#0B0C0F!important;
+  color:#E2E0D9!important;
+  border:1px solid #3a3f48!important;
+  border-radius:5px!important
+}
+:root:not([data-theme="light"]) a{color:#8fb0d4}
+:root:not([data-theme="light"]) th{background:#1a1d24!important;color:#B49A62}
+:root:not([data-theme="light"]) td,
+:root:not([data-theme="light"]) th{border-color:#3a3f48!important}
+:root:not([data-theme="light"]) mark{background:#B49A62!important;color:#0B0C0F!important}
+:root:not([data-theme="light"]) #app{background:transparent!important}
+:root:not([data-theme="light"]) h2::after{
+  content:"";display:block;height:10px;margin:8px 0 4px;
+  background:url("deco-divider-sm.jpg") center/contain no-repeat;
+  opacity:.7
+}
+:root:not([data-theme="light"]) .aw-divider{
+  display:block;height:12px;margin:16px 0 12px;
+  background:url("deco-divider-sm.jpg") center/contain no-repeat;
+  opacity:.85;border:0
+}
+
+
+/* App-wide light theme */
+:root[data-theme="light"]{
+  --bg:#f4f5f7;--panel:#ffffff;--panel2:#eef0f3;--ink:#1d2230;--mute:#5c6475;
+  --line:#d5d9e2;--acc:#2f5d8a;--acc2:#3d6fa0;--gold:#8a7340;--silver:#6b7280;
+  --hit:#c9a227;--bad:#a8322d;color-scheme:light
+}
+:root[data-theme="light"],
+:root[data-theme="light"] body{
+  background-color:#f4f5f7!important;
+  background-image:none!important;
+  color:#1d2230!important
+}
+:root[data-theme="light"] header,
+:root[data-theme="light"] .seg,
+:root[data-theme="light"] #nav,
+:root[data-theme="light"] #res,
+:root[data-theme="light"] #ban{
+  background:#ffffff!important;
+  background-image:none!important;
+  border-color:#d5d9e2!important;
+  box-shadow:0 1px 4px rgba(0,0,0,.06)!important;
+  color:#1d2230!important
+}
+:root[data-theme="light"] h1,
+:root[data-theme="light"] h2,
+:root[data-theme="light"] h3,
+:root[data-theme="light"] h4,
+:root[data-theme="light"] header h1{color:#2f5d8a!important}
+:root[data-theme="light"] section,
+:root[data-theme="light"] .card,
+:root[data-theme="light"] .big div,
+:root[data-theme="light"] .sg div,
+:root[data-theme="light"] .res,
+:root[data-theme="light"] details,
+:root[data-theme="light"] .ov{
+  background:#ffffff!important;
+  background-image:none!important;
+  border:1px solid #d5d9e2!important;
+  box-shadow:0 1px 4px rgba(0,0,0,.05)!important;
+  color:#1d2230!important
+}
+:root[data-theme="light"] button,
+:root[data-theme="light"] .btn{
+  background:#ffffff!important;
+  color:#1d2230!important;
+  border:1px solid #d5d9e2!important;
+  box-shadow:none!important
+}
+:root[data-theme="light"] button.pri,
+:root[data-theme="light"] .pri{
+  background:#2f5d8a!important;
+  border-color:#2f5d8a!important;
+  color:#fff!important
+}
+:root[data-theme="light"] button.on,
+:root[data-theme="light"] .seg .on,
+:root[data-theme="light"] #nav button.on{
+  color:#2f5d8a!important;
+  border-color:#2f5d8a!important;
+  box-shadow:inset 0 -2px #2f5d8a!important
+}
+:root[data-theme="light"] input,
+:root[data-theme="light"] textarea,
+:root[data-theme="light"] select{
+  background:#f4f5f7!important;
+  color:#1d2230!important;
+  border:1px solid #d5d9e2!important
+}
+:root[data-theme="light"] a{color:#2f5d8a}
+:root[data-theme="light"] th{background:#eef0f3!important;color:#1d2230!important}
+:root[data-theme="light"] td,
+:root[data-theme="light"] th{border-color:#d5d9e2!important}
+:root[data-theme="light"] mark{background:#ffe08a!important;color:#1d2230!important}
+:root[data-theme="light"] #app{background:#f4f5f7!important}
+:root[data-theme="light"] h2::after,
+:root[data-theme="light"] .aw-divider{opacity:0!important;height:0!important;margin:0!important}
+
+
+.aw-ver{position:fixed;top:0;left:0;right:0;z-index:50;pointer-events:none;display:flex;justify-content:flex-end;padding:4px 8px;padding-top:calc(4px + env(safe-area-inset-top,0px));font:600 12px/1.2 system-ui,sans-serif;color:var(--mute,#92969D);letter-spacing:.04em}
+.aw-ver span{pointer-events:auto;background:rgba(11,12,15,.75);border:1px solid var(--line,#3a3f48);border-radius:4px;padding:3px 8px}
+:root[data-theme="light"] .aw-ver span{background:rgba(255,255,255,.9);color:#5c6475}
+
 </style></head><body>
+<div class="aw-ver" id="awver"><span>After World V8.3</span></div>
 <div id="app"><iframe id="f-rule" src="rulebook.html" title="Rulebook"></iframe><iframe id="f-chars" src="sheet.html" title="Characters" hidden></iframe><iframe id="f-gm" src="gm.html" title="GM tools" hidden></iframe>
 <div id="ban" hidden><span id="bt"></span><button id="bb"></button><button id="bx">Dismiss</button></div><nav id="nav"></nav></div>
-<div class="ov" id="srch" hidden style="justify-content:flex-start;overflow:auto"><input id="sq" type="search" placeholder="Search rules, traits, races, gear" autocomplete="off" style="font:inherit;font-size:16px;padding:10px;border-radius:8px;border:1px solid var(--line);background:var(--panel);color:var(--ink)"><div id="sr"></div><button id="sx">Close</button></div>
+<div class="ov" id="srch" hidden style="justify-content:flex-start;overflow:auto"><input id="sq" type="search" placeholder="Search rules, traits, races, gear, enemies, loot…" autocomplete="off" style="font:inherit;font-size:16px;padding:10px;border-radius:8px;border:1px solid var(--line);background:var(--panel);color:var(--ink)"><div id="sr"></div><button id="sx">Close</button></div>
 <div class="ov" id="role" hidden><h1>After World</h1><p style="text-align:center;margin:0;color:var(--mute)">Who are you today?</p><button class="big" data-role="player">Player<small>Rulebook and your characters</small></button><button class="big" data-role="gm">GM<small>Rulebook and your tools</small></button></div>
-<div class="ov" id="more" hidden><h1>More</h1><button id="sw">Switch role</button><label class="chk"><input type="checkbox" id="awake"> Keep the screen awake</label><div class="chk">Text size <button id="fm">A−</button><button id="fp">A+</button></div><button id="exp">Back up characters</button><button id="upd">Check for updates</button><button id="mx">Close</button></div>
+<div class="ov" id="more" hidden><h1>More</h1><button id="sw">Switch role</button><button id="themeBtn">Theme: Dark</button><label class="chk"><input type="checkbox" id="awake"> Keep the screen awake</label><div class="chk">Text size <button id="fm">A−</button><button id="fp">A+</button></div><button id="exp">Back up characters</button><button id="upd">Check for updates</button><button id="mx">Close</button></div>
 <script src="data.js"></script>
+<script src="enemies.js"></script>
+<script src="loot.js"></script>
+<script src="loot-modern.js"></script>
+<script src="extra2.js"></script>
 <script>
 (function(){
 var $=function(s){return document.querySelector(s)};
@@ -45,13 +237,30 @@ function reminder(){var n=0;try{n=Object.keys(JSON.parse(ls('aw-chars-v1')||'{}'
   if(n&&Date.now()-(+ls('aw-bk')||0)>54e6){ls('aw-bk',String(Date.now()));say('Back up your characters in case you change phones.','Export now',exp)}}
 var TN={fan:'Fantasy',mod:'Modern',sw:'Star Wars'};
 function go(h){$('#srch').hidden=true;tab='rule';show();var w=$('#f-rule').contentWindow;w.location.hash='';w.location.hash='#'+h}
-function find(q){q=q.toLowerCase().trim();var G={},D=window.AWDATA||{},add=function(g,t,s,h){(G[g]=G[g]||[]);if(G[g].length<12)G[g].push([t,s,h])},m=function(s){return s.toLowerCase().indexOf(q)>-1};
+function find(q){q=q.toLowerCase().trim();var G={},D=window.AWDATA||{},TN={fan:'Fantasy',mod:'Modern',sw:'Star Wars'},add=function(g,t,s,h){(G[g]=G[g]||[]);if(G[g].length<18)G[g].push([t,s,h||''])},m=function(s){return (s||'').toLowerCase().indexOf(q)>-1};
   if(q.length<2)return'<p style="color:var(--mute)">Type at least two letters.</p>';
-  try{$('#f-rule').contentDocument.querySelectorAll('h1[id],h2[id],h3[id],h4[id]').forEach(function(e){if(m(e.textContent))add('Rulebook',e.textContent,'',e.id)})}catch(e){}
-  D.abil.forEach(function(a){if(m(a.n+' '+a.id+' '+a.cat))add('Traits and powers',a.n,a.id+' · '+a.cat,a.a)});
-  D.races.forEach(function(r){if(m(r.n))add('Races',r.n,TN[r.t],'')});D.bgs.forEach(function(r){if(m(r.n))add('Backgrounds',r.n,TN[r.t],'')});
-  D.weapons.forEach(function(w){if(m(w.n))add('Weapons',w.n,w.prof+(w.dmg?' · damage '+w.dmg:''),'')});D.armour.forEach(function(w){if(m(w.n))add('Armour and shields',w.n,w.prof,'')});
-  var h='';Object.keys(G).forEach(function(g){h+='<h3>'+g+'</h3>'+G[g].map(function(r){return '<button data-h="'+r[2]+'">'+r[0].replace(/[<&]/g,'')+'<small>'+r[1].replace(/[<&]/g,'')+'</small></button>'}).join('')});return h||'<p style="color:var(--mute)">No matches.</p>'}
+  try{$('#f-rule').contentDocument.querySelectorAll('h1[id],h2[id],h3[id],h4[id]').forEach(function(e){if(m(e.textContent))add('Rulebook',e.textContent.trim(),'',e.id)})}catch(e){}
+  try{$('#f-rule').contentDocument.querySelectorAll('p,li').forEach(function(e){var t=(e.textContent||'').trim();if(t.length>40&&t.length<220&&m(t)){var id=(e.closest('[id]')||e.previousElementSibling||{}).id||'';add('Rulebook text',t.slice(0,90)+(t.length>90?'…':''),'',id)}})}catch(e){}
+  (D.abil||[]).forEach(function(a){if(m(a.n+' '+a.id+' '+a.cat+(a.txt||'')))add('Traits and powers',a.n,(a.id||'')+' · '+(a.cat||''),a.a||'')});
+  (D.races||[]).forEach(function(r){if(m(r.n+(r.desc||'')+(r.stats||[]).join(' ')))add('Races',r.n,TN[r.t]||r.t,'')});
+  (D.bgs||[]).forEach(function(r){if(m(r.n+(r.info||[]).join(' ')))add('Backgrounds',r.n,TN[r.t]||r.t,'')});
+  (D.weapons||[]).forEach(function(w){if(m(w.n+' '+(w.prof||'')+' '+(w.tags||'')+' '+(w.dmg||'')))add('Weapons',w.n,(w.prof||'')+(w.dmg?' · damage '+w.dmg:''),'')});
+  (D.armour||[]).forEach(function(w){if(m(w.n+' '+(w.prof||'')+' '+(w.kind||'')))add('Armour and shields',w.n,w.prof||w.kind||'','')});
+  (window.AWENEMY||[]).forEach(function(e){if(m(e.n+' '+(e.tags||'')+' '+(e.ds||'')+' '+(e.sp||'')))add('Enemies',e.n,(TN[e.t]||e.t)+' · Level '+e.lv+(e.tags?' · '+e.tags:''),'')});
+  var Z=window.AWLOOT||{};
+  function lootScan(arr,label){(arr||[]).forEach(function(x){var n=x.n||x;if(typeof n!=='string')return;if(m(n+' '+(x.e||'')+' '+(x.c||'')))add('Loot · '+label,n,(x.c||'')+(x.v?' · '+x.v:''),'')})};
+  Object.keys(Z.bands||{}).forEach(function(b){lootScan(Z.bands[b],'Fantasy')});
+  if(Z.mod&&Z.mod.bands)Object.keys(Z.mod.bands).forEach(function(b){lootScan(Z.mod.bands[b],'Modern')});
+  if(Z.sw&&Z.sw.tiers)Object.keys(Z.sw.tiers).forEach(function(t){lootScan(Z.sw.tiers[t],'Star Wars')});
+  if(Z.extra){Object.keys(Z.extra).forEach(function(k){var v=Z.extra[k];if(Array.isArray(v))lootScan(v,k);else if(v&&typeof v==='object')Object.keys(v).forEach(function(b){lootScan(v[b],k)})})}
+  var X2=window.AWX2||{};
+  (X2.races||[]).forEach(function(r){if(m(r.n))add('Races (extra)',r.n,TN[r.t]||'','')});
+  (X2.bgs||[]).forEach(function(r){if(m(r.n))add('Backgrounds (extra)',r.n,TN[r.t]||'','')});
+  if(X2.ref)X2.ref.forEach(function(r){if(m(r[0]+' '+(r[1]||[]).join(' ')))add('Star Wars reference',r[0],'','')});
+  var order=['Rulebook','Rulebook text','Traits and powers','Races','Races (extra)','Backgrounds','Backgrounds (extra)','Weapons','Armour and shields','Enemies','Loot · Fantasy','Loot · Modern','Loot · Star Wars','Star Wars reference'];
+  var h='';order.forEach(function(g){if(!G[g])return;h+='<h3>'+g+'</h3>'+G[g].map(function(r){return '<button data-h="'+r[2]+'">'+r[0].replace(/[<&]/g,'')+'<small>'+r[1].replace(/[<&]/g,'')+'</small></button>'}).join('')});
+  Object.keys(G).forEach(function(g){if(order.indexOf(g)<0)h+='<h3>'+g+'</h3>'+G[g].map(function(r){return '<button data-h="'+r[2]+'">'+r[0].replace(/[<&]/g,'')+'<small>'+r[1].replace(/[<&]/g,'')+'</small></button>'}).join('')});
+  return h||'<p style="color:var(--mute)">No matches.</p>'}
 $('#sq').oninput=function(){$('#sr').innerHTML=find(this.value)};$('#sx').onclick=function(){$('#srch').hidden=true};
 $('#sr').onclick=function(e){var b=e.target.closest('[data-h]');if(b&&b.dataset.h)go(b.dataset.h)};
 function zoom(){var z=(+ls('aw-fs')||100)/100;['f-rule','f-chars','f-gm'].forEach(function(i){try{$('#'+i).contentDocument.documentElement.style.zoom=z}catch(e){}})}
@@ -68,6 +277,18 @@ $('#awake').onchange=function(){ls('aw-awake',this.checked?'1':'0');wake()};
 $('#upd').onclick=function(){$('#more').hidden=true;if(reg)reg.update().then(function(){say('Checked. You have the latest version unless a reload banner appears.','OK',function(){})});else say('Updates are checked when you are online and the app is installed.','OK',function(){})};
 $('#bx').onclick=function(){$('#ban').hidden=true};
 addEventListener('message',function(e){var d=e.data;if(e.origin!==location.origin||!d||d.aw!=='rule')return;tab='rule';show();var w=$('#f-rule').contentWindow;w.location.hash='';w.location.hash='#'+d.hash});
+
+function getTheme(){try{return localStorage.getItem('aw-theme')||'dark'}catch(e){return'dark'}}
+function setTheme(t){t=t==='light'?'light':'dark';try{localStorage.setItem('aw-theme',t)}catch(e){}
+  document.documentElement.dataset.theme=t;
+  ['f-rule','f-chars','f-gm'].forEach(function(id){try{var d=$('#'+id).contentDocument;if(d)d.documentElement.dataset.theme=t}catch(e){}});
+  var b=$('#themeBtn');if(b)b.textContent='Theme: '+(t==='light'?'Light':'Dark');
+}
+function applyTheme(){setTheme(getTheme())}
+['f-rule','f-chars','f-gm'].forEach(function(id){var el=$('#'+id);if(el)el.addEventListener('load',function(){try{el.contentDocument.documentElement.dataset.theme=getTheme()}catch(e){}})});
+var _tb=$('#themeBtn');if(_tb)_tb.onclick=function(){setTheme(getTheme()==='light'?'dark':'light')};
+applyTheme();
+
 if(role){show();reminder();wake()}else{$('#role').hidden=false}
 if('serviceWorker' in navigator&&location.protocol!=='file:'){var had=!!navigator.serviceWorker.controller;
   addEventListener('load',function(){navigator.serviceWorker.register('sw.js').then(function(r){reg=r}).catch(function(){})});
