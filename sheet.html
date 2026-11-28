@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="utf-8">
+<html lang="en" data-theme="dark"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes">
 <title>After World Character Sheet</title>
@@ -41,11 +41,33 @@ details{margin:8px 0;border:1px solid var(--line);border-radius:8px;padding:6px 
 select{width:100%;}
 .card{flex-wrap:wrap}.card .open{flex:1 1 100%}.card button:not(.open){flex:1}.wrow{border-top:1px solid var(--line);padding:8px 0}.wrow select{flex:1}
 mark{background:#ffe08a;color:#1d2230;border-radius:3px;padding:0 2px}
+.chk{display:flex;gap:10px;align-items:center;padding:8px 2px}.chk input{width:22px;height:22px}
 button:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid var(--acc);outline-offset:2px}
-</style></head><body>
+
+
+
+
+
+
+
+
+/* After World V8.9 visuals live in aw-visuals.css */
+#sess{display:none;padding:6px 10px;font-size:13px;gap:8px;flex-wrap:wrap;align-items:center;border-top:1px solid rgba(180,154,98,.4)}
+#sess.on{display:flex}
+#sess b{color:#B49A62}
+#sess .sgo{margin-left:auto}
+
+</style>
+<link rel="stylesheet" href="aw-visuals.css?v=89"></head><body>
 <header><button id="back" hidden>Characters</button><h1 id="ttl">After World Characters</h1><span id="st"></span></header>
+<div id="aw-nextup" role="status"><div class="lab">Next up</div><strong id="aw-nextup-text"></strong><div class="row"><button type="button" id="aw-nextup-go" class="pri">Go to this step</button></div></div>
 <main id="list"></main>
 <main id="sheet" hidden></main>
 <script src="data.js"></script>
+<script src="extra2.js"></script>
 <script src="sheet.js"></script>
-</body></html>
+<script>
+(function(){try{var t=localStorage.getItem('aw-theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t;else document.documentElement.dataset.theme='dark';
+window.addEventListener('storage',function(e){if(e.key==='aw-theme'&&(e.newValue==='light'||e.newValue==='dark'))document.documentElement.dataset.theme=e.newValue});
+}catch(x){}})();
+</script></body></html>
